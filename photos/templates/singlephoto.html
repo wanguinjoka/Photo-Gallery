@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+{% load bootstrap3 %}
+{% load static %}
+
+{% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/photos.css' %}">
+  {% endblock %}
+
+ {% block content %}
+ <div class="photo-container">
+<img src="{{singlephoto.photo_image.url}}" alt="Big Sur">
+<h2>{{singlephoto.name}}</h2>
+<p>{{singlephoto.description}}</p>
+<div class="row">
+  <p>Posted {{singlephoto.pub_date|timesince}}</p>
+</div>
+<a href="#" class="button">download</a>
+ </div>
+
+ {% endblock %}

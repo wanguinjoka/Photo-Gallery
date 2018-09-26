@@ -24,3 +24,10 @@ def search_results(request):
         message ="Search according to: Career,Travel,Family,Hobbies"
 
         return render(request,'search.html',{"message":message})
+
+def singlephoto(request,photo_id):
+    try:
+        singlephoto = Photo.objects.get(id = photo_id)
+    except DoesNotExist:
+        raise Http404()
+    return render(request,"singlephoto.html",{"singlephoto":singlephoto})
