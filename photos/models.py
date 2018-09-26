@@ -40,5 +40,5 @@ class Photo(models.Model):
 
     @classmethod
     def search_by_category(cls,search_term):
-        photos = cls.objects.filter(category_icontains=search_term)
+        photos = cls.objects.filter(category = search_term)
         return photos
