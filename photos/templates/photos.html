@@ -18,6 +18,15 @@
   <div class="gallery">
 
     <!-- scale / rotate -->
+    <!--looping through photos -->
+	{% for photo_item in photos %}
+	<div class="photo-container">
+      <img src="{{photo_item.photo_image.url}}" alt="Big Sur">
+      <h2>{{photo_item.name}}</h2>
+      <p>{{photo_item.description}}</p>
+      <a href="#" class="button">download</a>
+    </div>
+     {% endfor %}
 
     <div class="photo-container">
       <img src="https://res.cloudinary.com/olti/image/upload/v1463520654/1_xdyhpf.jpg" alt="Big Sur">
