@@ -9,3 +9,18 @@ def test(request):
 def photos(request):
     photos = Photo.display_photos()
     return render(request, 'photos.html',{"photos":photos})
+
+def search_results(request):
+
+    if 'photo' in request.GET and request.GET["photo"]:
+        search_term = request.GET.get("photo")
+        searched_photos = Photo.search_by_category(search_term)
+
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"message":message, "photos": searched_photos})
+
+    else:
+        message ="Search according to: Career,Travel,Family,Hobbies"
+
+        return render(request,'search.html',{"message":message})

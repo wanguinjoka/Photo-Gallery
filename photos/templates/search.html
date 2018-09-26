@@ -1,0 +1,36 @@
+{%extends 'base.html'%}
+{% load bootstrap3 %}
+{% load static %}
+
+{% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/photos.css' %}">
+  {% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    {% if photos%}
+      <h2>Found {{ photos|length }} of searched term {{message}}</h2>
+    {% else %}
+      <h2> Found 0 photos for the search term {{message}} category</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+
+  {% if photos %}
+  {% for photo in photos %}
+  <div class="photo-container">
+	<img src="{{photo.photo_image.url}}" alt="Big Sur">
+	<h2>{{photo.name}}</h2>
+	<p>{{photo.description}}</p>
+	<a href="#" class="button">download</a>
+  </div>
+   {% endfor %}
+  {% endif %}
+  </div>
+</div>
+{% endblock %}
