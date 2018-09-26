@@ -1,5 +1,112 @@
 {%extends 'base.html'%}
+{% block styles %}
+{{block.super}}
+{%endblock%}
 
 {% block content %}
 {{block.super}}
+<div class="container">
+  <header class="main-header">
+    <img class="logo" src="https://res.cloudinary.com/olti/image/upload/v1463520630/camera_nm0spm.svg">
+    <h1 class="name">Transform<span>Gallery</span></h1>
+  </header>
+
+  <div class="gallery">
+
+    <!-- scale / rotate -->
+
+    <div class="photo-container">
+      <img src="https://res.cloudinary.com/olti/image/upload/v1463520654/1_xdyhpf.jpg" alt="Big Sur">
+      <h2>Big Sur, California</h2>
+      <p>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      <a href="#" class="button">download</a>
+    </div>
+
+    <div class="photo-container">
+      <img src="https://res.cloudinary.com/olti/image/upload/v1463520653/2_keuljm.jpg" alt="Turquoise waters">
+      <h2>Turquoise waters</h2>
+      <p>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      <a href="#" class="button">download</a>
+    </div>
+
+    <div class="photo-container">
+      <img src="https://res.cloudinary.com/olti/image/upload/v1463520654/3_yn1nie.jpg" alt="The retro van">
+      <h2>The Retro Van</h2>
+      <p>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      <a href="#" class="button">download</a>
+    </div>
+
+  <!-- scale / transform-origin -->
+
+    <div class="photo-container">
+      <div class="photo">
+        <img src="https://res.cloudinary.com/olti/image/upload/v1463520653/4_ai8tjm.jpg" alt="Petunia the pug">
+        <div class="photo-overlay">
+          <h2>Petunia the pug</h2>
+          <p>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+      </div>
+      <a href="#" class="button">download</a>
+    </div>
+
+    <div class="photo-container">
+      <div class="photo">
+        <img src="https://res.cloudinary.com/olti/image/upload/v1463520654/5_rsz2gl.jpg" alt="Red Facade">
+        <div class="photo-overlay">
+          <h2>Red Facade</h2>
+          <p>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+      </div>
+      <a href="#" class="button">download</a>
+    </div>
+
+    <div class="photo-container">
+      <div class="photo">
+        <img src="https://res.cloudinary.com/olti/image/upload/v1463520655/6_bowdqi.jpg" alt="Ferris Wheel">
+        <div class="photo-overlay">
+          <h2>Ferris Wheel</h2>
+          <p>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+      </div>
+      <a href="#" class="button">download</a>
+    </div>
+
+    <!-- translate transform
+
+    <div class="photo-container">
+      <div class="photo slide">
+        <img src="https://res.cloudinary.com/olti/image/upload/v1463520654/7_qih9kw.jpg" alt="Step by Step">
+        <div class="photo-overlay">
+          <h2>Step by Step</h2>
+          <p>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <a href="#" class="button">download</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="photo-container">
+      <div class="photo slide">
+        <img src="https://res.cloudinary.com/olti/image/upload/v1463520654/8_voifla.jpg" alt="Brooklyn Bridge">
+        <div class="photo-overlay">
+          <h2>Brooklyn Bridge</h2>
+          <p>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <a href="#" class="button">download</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="photo-container">
+      <div class="photo slide">
+        <img src="https://res.cloudinary.com/olti/image/upload/v1463520654/9_kht3vc.jpg" alt="Up in the Air">
+        <div class="photo-overlay">
+          <h2>Up in the Air</h2>
+          <p>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <a href="#" class="button">download</a>
+        </div>
+      </div>
+    </div> -->
+
+</div>
+
+
 {% endblock %}
