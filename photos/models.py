@@ -1,4 +1,5 @@
 from django.db import models
+import pyperclip
 
 # Create your models here.
 class Location(models.Model):
@@ -40,5 +41,10 @@ class Photo(models.Model):
 
     @classmethod
     def search_by_category(cls,search_term):
-        photos = cls.objects.filter(category = search_term)
+        photos = cls.objects.filter(category =search_term)
         return photos
+
+    @classmethod
+    def copy_image(cls):
+        download = cls.objects.filter(photo_image = photo_image)
+        return download
