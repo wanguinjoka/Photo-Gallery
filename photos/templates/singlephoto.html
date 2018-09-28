@@ -8,15 +8,14 @@
   {% endblock %}
 
  {% block content %}
+
+
  <div class="photo-container">
-<img src="{{singlephoto.photo_image.url}}" alt="Big Sur">
-<h2>{{singlephoto.name}}</h2>
-<p>{{singlephoto.description}}</p>
-<div class="row">
-  <p>Posted {{singlephoto.pub_date|timesince}}</p>
-  <p>Location:{{singlephoto.location.name}}</p>
-</div>
-<a href="#" class="button">download</a>
+   <img src="{{singlephoto.photo_image.url}}" alt="Big Sur">
+   <h2>{{singlephoto.name}}</h2>
+   <p>{{singlephoto.description}}</p>
+   <a href="#" class="button">view image</a>
  </div>
+
 
  {% endblock %}

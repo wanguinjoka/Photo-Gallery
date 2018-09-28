@@ -21,9 +21,10 @@ def search_results(request):
         return render(request, 'search.html',{"message":message, "photos": searched_photos})
 
     else:
-        message ="Search according to: Career,Travel,Family,Hobbies"
+        message ="Search according to: 1-Career,2-Travel,3-Family,4-Hobbies"
 
         return render(request,'search.html',{"message":message})
+
 
 def singlephoto(request,photo_id):
     try:

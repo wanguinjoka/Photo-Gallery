@@ -44,6 +44,11 @@ class Photo(models.Model):
         photos = cls.objects.filter(category =search_term)
         return photos
 
+    # @classmethod
+    # def photo_by_id(cls,id):
+    #     photo = cls.objects.get(pk=id)
+    #     return photo
+
     @classmethod
     def copy_image(cls):
         download = cls.objects.filter(photo_image = photo_image)
