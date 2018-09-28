@@ -58,7 +58,7 @@ DATABASES['default'].update(db_from_env)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
-DEBUG=True
+
 
 # Application definition
 
@@ -108,20 +108,6 @@ WSGI_APPLICATION = 'photogallery.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'photos',
-#         'USER': 'wanguinjoka',
-#         'PASSWORD': 'hakiizzy',
-#     }
-# }
-
-
-# Password validation
-# https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
