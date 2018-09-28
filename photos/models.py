@@ -45,10 +45,12 @@ class Photo(models.Model):
         return photos
 
     @classmethod
-    def single_photo(cls):
-        photo = cls.objects.get()
+    def single_photo(cls,id):
+        photo = cls.objects.get(pk = id)
+        return photo
+
     @classmethod
     def copy_image(cls):
-        download = cls.objects.get(name)
+        download = Photo.single_photo()
         pyperclip.copy(download.photo_image)
-        return download
+        
