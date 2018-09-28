@@ -33,7 +33,7 @@ class Photo(models.Model):
     category =models.ForeignKey(Category)
     pub_date = models.DateTimeField(auto_now_add=True)
     photo_image = models.ImageField(upload_to = 'photos/')
-   
+
     @classmethod
     def display_photos(cls):
         photos = cls.objects.all()
@@ -41,11 +41,14 @@ class Photo(models.Model):
 
     @classmethod
     def search_by_category(cls,search_term):
-        photos = cls.objects.filter(category =search_term)
+        photos = cls.objects.filter(category__name__icontains=search_term)
         return photos
 
-
+    @classmethod
+    def single_photo(cls):
+        photo = cls.objects.get()
     @classmethod
     def copy_image(cls):
-        download = cls.objects.filter(photo_image = photo_image)
+        download = cls.objects.get(name)
+        pyperclip.copy(download.photo_image)
         return download
