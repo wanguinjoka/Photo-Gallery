@@ -13,8 +13,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import dj_database_url
 from decouple import config,Csv
+import django_heroku
 
-MODE = config("MODE", default="dev")
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -25,22 +25,25 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
+MODE=config("MODE", default="dev")
+SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
-#development
+# development
 if config('MODE')=="dev":
-    DATABASES = {
+   DATABASES = {
        'default': {
-           'ENGINE': 'django.db.backends.postgresql',
+           'ENGINE': 'django.db.backends.postgresql_psycopg2',
            'NAME': config('DB_NAME'),
            'USER': config('DB_USER'),
            'PASSWORD': config('DB_PASSWORD'),
            'HOST': config('DB_HOST'),
            'PORT': '',
        }
-      }
+
+   }
 # production
 else:
    DATABASES = {
@@ -53,9 +56,6 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -159,3 +159,5 @@ STATICFILES_DIRS = [
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+django_heroku.settings(locals())
