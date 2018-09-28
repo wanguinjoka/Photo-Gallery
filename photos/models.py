@@ -33,7 +33,7 @@ class Photo(models.Model):
     category =models.ForeignKey(Category)
     pub_date = models.DateTimeField(auto_now_add=True)
     photo_image = models.ImageField(upload_to = 'photos/')
-
+   
     @classmethod
     def display_photos(cls):
         photos = cls.objects.all()
@@ -44,10 +44,6 @@ class Photo(models.Model):
         photos = cls.objects.filter(category =search_term)
         return photos
 
-    # @classmethod
-    # def photo_by_id(cls,id):
-    #     photo = cls.objects.get(pk=id)
-    #     return photo
 
     @classmethod
     def copy_image(cls):
