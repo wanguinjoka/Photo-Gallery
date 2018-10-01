@@ -6,20 +6,18 @@ from .models import Location,Category,Photo
 class PhotoTestClass(TestCase):
 
     def setUp(self):
-        # Creating a new editor and saving it
-        self.james= Photo(name = 'testpic', description='Muriuki', email ='james@moringaschool.com')
-        self.james.save_editor()
+        # Creating a new photo and saving it
+        self.testpic= Photo(name = 'testpic', description='Muriuki', email ='james@moringaschool.com')
+        self.testpic.save_()
 
-        # Creating a new tag and saving it
-        self.new_tag = tags(name = 'testing')
-        self.new_tag.save()
+        # Creating a new location and saving it
+        self.testloc = Location(name = 'Nairobi')
+        self.new_testloc.save()
 
-        self.new_article= Article(title = 'Test Article',post = 'This is a random test Post',editor = self.james)
-        self.new_article.save()
-
-        self.new_article.tags.add(self.new_tag)
+        self.new_category= Category(name = 'nightlife')
+        self.new_category.save()
 
     def tearDown(self):
-        Editor.objects.all().delete()
-        tags.objects.all().delete()
-        Article.objects.all().delete()
+        Photo.objects.all().delete()
+        Location.objects.all().delete()
+        Category.objects.all().delete()

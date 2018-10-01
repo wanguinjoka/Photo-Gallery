@@ -34,6 +34,16 @@ class Photo(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     photo_image = models.ImageField(upload_to = 'photos/')
 
+    class Meta:
+			ordering=['title']
+	def save_Photo(self):
+		self.save()
+	def update_Photo(self):
+		self.update()
+	def delete_Photo(self):
+		self.delete()
+
+
     @classmethod
     def display_photos(cls):
         photos = cls.objects.all()
@@ -53,4 +63,3 @@ class Photo(models.Model):
     def copy_image(cls):
         download = Photo.single_photo()
         pyperclip.copy(download.photo_image)
-        
