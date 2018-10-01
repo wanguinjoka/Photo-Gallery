@@ -7,7 +7,7 @@ This gallery app is designed and implemented using Django 1.11
 ## User Stories
 * View all images
 * Search images by category
-* View location based on Location
+* View images based on Location
 * Copy Image url link
 ## SetUp / Installation Requirements
 ### Prerequisites
@@ -30,7 +30,7 @@ This gallery app is designed and implemented using Django 1.11
 
 ## live link to the application
 * http://transform-gallery.herokuapp.com/
-# View single-photo
+## View single-photo
 * http://transform-gallery.herokuapp.com/photo/2-
 
 ## Technologies Used
@@ -38,7 +38,7 @@ This gallery app is designed and implemented using Django 1.11
 * django 1.11
 * Heroku for deployment
 
-##Bugs
+## Bugs
 * Site taking too long to load on heroku
 
 ## License
