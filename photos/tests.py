@@ -21,3 +21,9 @@ class PhotoTestClass(TestCase):
         Photo.objects.all().delete()
         Location.objects.all().delete()
         Category.objects.all().delete()
+
+    def test_copy_image(self):
+        self.new_Photo.save_Photo()
+        Photo.copy_image("")
+
+        self.assertEqual(self.new_Photo.photo_image,pyperclip.paste())
